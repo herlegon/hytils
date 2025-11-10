@@ -1,3 +1,5 @@
+__version__ = "0.1.0"
+
 from .extra import (
     arg_list,
     swap_keys_values,
@@ -13,6 +15,7 @@ from .path import (
     parent_directory,
     get_app_tempdir,
 )
+
 from .p_print import (
     red,
     green,
@@ -60,5 +63,3 @@ __all__ = [
     "arg_list",
     "swap_keys_values",
 ]
-
-__version__ = "0.1"
