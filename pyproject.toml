@@ -1,0 +1,38 @@
+[project]
+name = "hytils"
+version = "0.1"
+description = "Shared utilities: paths, formatting, and helpers"
+readme = "README.md"
+authors = [
+    { name = "Jep Etau", email = "jep.etau@gmail.com" }
+]
+requires-python = ">=3.12"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/herlegon/hytils"
+Documentation = "https://github.com/herlegon/hytils/README.md"
+Repository = "https://github.com/herlegon/hytils"
+"Bug Tracker" = "https://github.com/herlegon/hytils/issues"
+
+[build-system]
+requires = ["setuptools >= 77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hytils*"]
+exclude = ["tests*", "scripts"]
+
+[tool.black]
+line-length = 90
+target-version = ['py312']
+
+[tool.ruff]
+exclude = ["*"]

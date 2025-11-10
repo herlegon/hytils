@@ -1,2 +1,1 @@
-# hytils
-Utilities
+Utilities for Herlegon tools
