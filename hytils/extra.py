@@ -1,5 +1,5 @@
 import inspect
-from typing import Type
+from typing import Any, Type
 
 
 def arg_list(model_class: type) -> list[str]:
@@ -10,12 +10,14 @@ def arg_list(model_class: type) -> list[str]:
 
 
 def swap_keys_values(d: Type[dict]) -> Type[dict]:
-    """Swap keys/value of a dict.
-    Warning, it owerwrites a key, value pair if already exists"""
-    swapped: Type[dict] = type(d)()
+    """Swap keys and values in a dictionary.
+
+    This function swaps the keys and values of the input dictionary.
+    If a value is a list, it uses the value items as new keys, with
+    the original key as the corresponding value. If a value already exists
+    as a key in the swapped dictionary, it will be overwritten.
+    """
+    swapped: dict[Any, Any] = {}
     for k, v in d.items():
-        if isinstance(v, list):
-            swapped.update({x: k for x in v})
-        else:
-            swapped[v] = k
+        swapped.update({x: k for x in (v if isinstance(v, list) else [v])})
     return swapped
