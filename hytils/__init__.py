@@ -34,6 +34,11 @@ from .p_print import (
     white,
 )
 
+from .time_conversions import (
+    reformat_datetime,
+    current_datetime_str,
+)
+
 __all__ = [
     "red",
     "green",
@@ -62,4 +67,7 @@ __all__ = [
 
     "arg_list",
     "swap_keys_values",
+
+    "reformat_datetime",
+    "current_datetime_str",
 ]
