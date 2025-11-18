@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import tempfile
 from typing import Literal
 
@@ -53,3 +54,9 @@ def get_app_tempdir() -> str:
         )[-1]
     )
     return tmp_dirname
+
+
+def get_org_tempdir(org: str) -> Path:
+    return (
+        Path(tempfile.gettempdir()) / Path(__file__).parent.parent.name / org
+    )
